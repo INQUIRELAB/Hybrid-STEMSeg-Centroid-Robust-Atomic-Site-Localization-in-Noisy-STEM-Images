@@ -1,0 +1,14 @@
+# Hybrid-STEMSeg reproduction (mask-only / sm_bfo_com). Pin versions to match your lab GPU as needed.
+torch>=2.0
+torchvision>=0.15
+numpy>=1.23
+scipy>=1.10
+scikit-image>=0.21
+matplotlib>=3.7
+segmentation-models-pytorch>=0.3
+transformers>=4.30
+timm>=0.9
+monai>=1.2
+pandas>=2.0
+tqdm>=4.65
+atomai>=0.7
