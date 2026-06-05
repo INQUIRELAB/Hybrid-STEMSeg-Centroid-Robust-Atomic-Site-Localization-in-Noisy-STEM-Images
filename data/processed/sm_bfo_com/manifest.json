@@ -1,0 +1,131 @@
+{
+  "version": 1,
+  "source": "/home/arash/CV/project/data/SmBFO_composition_series.npy",
+  "patch_size": 256,
+  "sigma": 3.0,
+  "seed": 42,
+  "split_strategy": "stratified_by_com_density",
+  "forced_train_keys": [
+    "Sm_7_0"
+  ],
+  "com_density_table_sorted": [
+    [
+      "Sm_20_1",
+      1754.1719000291248
+    ],
+    [
+      "Sm_13_1",
+      2110.6605517706303
+    ],
+    [
+      "Sm_13_0",
+      2169.5508183016623
+    ],
+    [
+      "Sm_20_0",
+      2180.7542526590955
+    ],
+    [
+      "Sm_10_1",
+      2259.1100398591734
+    ],
+    [
+      "Sm_7_4",
+      2278.107477726603
+    ],
+    [
+      "Sm_7_3",
+      2312.4605169036417
+    ],
+    [
+      "Sm_10_0",
+      2313.4534852859438
+    ],
+    [
+      "Sm_0_1",
+      2408.731556325297
+    ],
+    [
+      "Sm_7_1",
+      2469.4500965379652
+    ],
+    [
+      "Sm_0_0",
+      2639.8982558139537
+    ],
+    [
+      "Sm_7_2",
+      2646.8097977332613
+    ],
+    [
+      "Sm_0_2",
+      2686.5943891193547
+    ]
+  ],
+  "train_keys": [
+    "Sm_0_0",
+    "Sm_0_1",
+    "Sm_10_0",
+    "Sm_10_1",
+    "Sm_13_0",
+    "Sm_13_1",
+    "Sm_20_0",
+    "Sm_7_0",
+    "Sm_7_1",
+    "Sm_7_2",
+    "Sm_7_4"
+  ],
+  "val_keys": [
+    "Sm_0_2",
+    "Sm_20_1",
+    "Sm_7_3"
+  ],
+  "keys_with_nan_cleaned": [
+    "Sm_0_1",
+    "Sm_0_2",
+    "Sm_10_0",
+    "Sm_10_1",
+    "Sm_13_0",
+    "Sm_13_1",
+    "Sm_7_3",
+    "Sm_7_4"
+  ],
+  "patches_per_key_train": 400,
+  "patches_per_key_val": 100,
+  "splits": {
+    "train": {
+      "shards": [
+        "train/shard_00000.npz",
+        "train/shard_00001.npz",
+        "train/shard_00002.npz",
+        "train/shard_00003.npz",
+        "train/shard_00004.npz",
+        "train/shard_00005.npz",
+        "train/shard_00006.npz",
+        "train/shard_00007.npz",
+        "train/shard_00008.npz"
+      ],
+      "counts": [
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        304
+      ]
+    },
+    "val": {
+      "shards": [
+        "val/shard_00000.npz"
+      ],
+      "counts": [
+        300
+      ]
+    }
+  },
+  "total_train": 4400,
+  "total_val": 300
+}
