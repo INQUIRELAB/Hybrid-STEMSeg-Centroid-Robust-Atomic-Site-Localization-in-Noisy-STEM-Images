@@ -1,0 +1,39 @@
+{
+  "description": "Exact train/val composition-key split used for Hybrid-STEMSeg benchmark checkpoints (seed 42). Reproduce with gan_seg.preprocess_dataset using the command in data/README.md.",
+  "raw_dataset": {
+    "zenodo_record": "https://zenodo.org/record/4876786",
+    "zenodo_file_url": "https://zenodo.org/record/4876786/files/composition_series_dict_full.npy",
+    "dataset_doi": "https://doi.org/10.13139/ORNLNCCS/1773704",
+    "paper_doi": "https://doi.org/10.1038/s41524-020-00396-2",
+    "local_filename": "data/SmBFO_composition_series.npy"
+  },
+  "label_field": "xy_COM",
+  "patch_size": 256,
+  "sigma": 3.0,
+  "seed": 42,
+  "split_strategy": "stratified_by_com_density",
+  "val_key_fraction": 0.22,
+  "forced_train_keys": ["Sm_7_0"],
+  "patches_per_key_train": 400,
+  "patches_per_key_val": 100,
+  "shard_size": 512,
+  "train_keys": [
+    "Sm_0_0",
+    "Sm_0_1",
+    "Sm_10_0",
+    "Sm_10_1",
+    "Sm_13_0",
+    "Sm_13_1",
+    "Sm_20_0",
+    "Sm_7_0",
+    "Sm_7_1",
+    "Sm_7_2",
+    "Sm_7_4"
+  ],
+  "val_keys": ["Sm_0_2", "Sm_20_1", "Sm_7_3"],
+  "totals": {
+    "train_patches": 4400,
+    "val_patches": 300
+  },
+  "preprocess_command": "python -m gan_seg.preprocess_dataset --source data/SmBFO_composition_series.npy --out data/processed/sm_bfo_com --patch-size 256 --sigma 3.0 --patches-per-key-train 400 --patches-per-key-val 100 --val-key-fraction 0.22 --force-train-keys Sm_7_0 --seed 42"
+}
