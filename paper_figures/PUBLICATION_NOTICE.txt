@@ -1,0 +1,27 @@
+Figures in this folder must be produced from real experiments.
+
+Terminology (do not call the model "centroid-aware"):
+- Training optimizes pixel-wise BCE + Dice on binary atom masks (CombinedSegLoss).
+- "Detection F1" in plots is a post-hoc metric: threshold mask, extract connected-component
+  centroids, greedy match within a distance threshold (see gan_seg/eval_cross_domain.py).
+  It is not a centroid regression loss or centroid-aware training objective.
+
+- Sm-BFO panels (dataset examples, corruption protocol, noise strips): require
+  data/processed/sm_bfo_com with val/*.npz shards from preprocess_dataset.
+  Scripts exit with an error if shards are missing unless you pass
+  --allow-synthetic-demo-only (development / layout only — do not use in a journal).
+
+- Gaussian curve PNG is derived from reports/reviewer_suite/robustness_multiseed.csv
+  (aggregate metrics), not from synthetic images.
+
+- Optional Fig.~8 ``noise_ablation_f1_curve.png`` comes from
+  reports/noise_ablation/noise_ablation_results.csv (run ``make_noise_figures``).
+
+- Fig.~10 JACS panels: ``python -m gan_seg.export_paper_fig10_jacs_examples`` — requires
+  Zenodo extracted data, benchmark Hybrid-STEMSeg, and few-shot checkpoint
+  ``checkpoints_jacs_fewshot/n{K}_seed{S}/hybrid-nogan/gan_seg_best.pt``.
+
+If any PNG here was generated while shards were absent, delete it and regenerate after:
+
+  python -m gan_seg.preprocess_dataset --source data/SmBFO_composition_series.npy \
+    --out data/processed/sm_bfo_com
